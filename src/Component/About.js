@@ -40,7 +40,7 @@ let buttonChange = ()=>{
             <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the first item's accordion body.</div>
         </div>
         </div>
-        <div className="accordion-item" style={myStyle}>
+        <div className="accordion-item" >
         <h2 className="accordion-header">
             <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
             Accordion Item #2

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function TextForm() {
+export default function TextForm(prop) {
     const[text,settext]=useState("Enter your text here")
 
     const handleOnClick = ()=>{
@@ -16,21 +16,21 @@ const handleOnClickLower = (event)=>{
     settext(inputValue);}
 
     const clear = (event)=>{
-        let inputValue = '';
+        let inputValue =  '';
         settext(inputValue);}
 
   return (
     <>
-    <div>
-        <div className="mb-3">
+    <div className='container' style={{color: prop.mode === 'dark' ? 'white':'black' }}>
+        <div className="mb-3" style={prop.myStyle}>
             <h2>Enter your text here</h2>
-            <textarea className="form-control" value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="7"></textarea>
+            <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: prop.mode === 'dark'? 'grey': 'white' ,color: prop.mode === 'dark' ? 'white':'black' }} id="exampleFormControlTextarea1" rows="7"></textarea>
         </div>
         <button className="btn btn-primary mx-2" onClick={handleOnClick}>Convert it into Upper Case</button>
         <button className="btn btn-primary mx-2" onClick={handleOnClickLower}>Convert it into Lower Case</button>
         <button className="btn btn-primary mx-2" onClick={clear}>Clear</button>
     </div>
-    <div className='my-5'>
+    <div className='my-5' style={{color: prop.mode === 'dark' ? 'white':'black' }} >
     <h2>Your Text Summary</h2>
     <p> {text.split(" ").length} words and {text.length} characters</p>
     <p>{0.008 * text.split(" ").length} minutes to read</p>
